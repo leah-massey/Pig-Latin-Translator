@@ -1,5 +1,11 @@
 const pigLatin = function (string) {
-  return "ellohay";
+  const extraLetters = "ay";
+  let stringArray = string.split("");
+  let firstLetter = stringArray.shift();
+
+  stringArray.push(firstLetter, extraLetters);
+
+  return stringArray.join("");
 };
 
 module.exports = pigLatin;
