@@ -23,13 +23,23 @@ const pigLatin = function (string) {
     });
     return translatedString;
   } else {
-    let stringArray = string.split("");
-    //console.log(stringArray);
+    const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
+    let punctuation;
+
+    let stringArray = string.split("");
     let firstLetter = stringArray.shift();
 
-    stringArray.push(firstLetter, extraLetters);
-    return stringArray.join("");
+    if (regex.test(stringArray[stringArray.length - 1])) {
+      punctuation = stringArray[stringArray.length - 1];
+      stringArray.pop();
+      console.log(stringArray);
+      stringArray.push(firstLetter, extraLetters, punctuation);
+      return stringArray.join("");
+    } else {
+      stringArray.push(firstLetter, extraLetters);
+      return stringArray.join("");
+    }
   }
 };
 

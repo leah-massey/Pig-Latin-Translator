@@ -13,7 +13,7 @@ describe("pigLatin", () => {
     expect(pigLatin("Hello world")).toEqual("elloHay orldway");
   });
 
-  // it("transforms a word into pig latin", () => {
-  //   expect(pigLatin("My!")).toEqual("yMay!");
-  // });
+  it("transforms a word into pig latin, leaving the pucntuation in place", () => {
+    expect(pigLatin("My!")).toEqual("yMay!");
+  });
 });
